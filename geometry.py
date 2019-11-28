@@ -17,7 +17,10 @@ WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 BLUE = (0 , 0, 255)
 RED = (255, 0, 0)
- 
+PI = 3.14
+line_s = 0
+line_e = 100
+
 pygame.init()
  
 # Set the width and height of the screen [width, height]
@@ -43,6 +46,30 @@ while not done:
     offset += 1
     if offset == 400:
         offset = 0
+
+    if   120 < offset < 220:
+        red = BLACK
+        blue = BLACK
+        green = WHITE
+        line_s = 0
+        line_e = 200
+
+    elif offset > 220:    
+        red = RED
+        blue = BLUE
+        green = GREEN
+        line_s = 320
+        line_e = 100 + offset
+
+    else:
+        red = RED
+        blue = BLUE
+        green = GREEN
+        line_s = 0
+        line_e = 100 + offset
+
+    
+    
     # --- Screen-clearing code goes here
  
     # Here, we clear the screen to white. Don't put other drawing commands
@@ -54,9 +81,10 @@ while not done:
  
     # --- Drawing code should go here
     # ---- coordinates for upper left, hight, width
-    pygame.draw.rect(screen, RED, [100 + offset, 100 + offset, 20, 25], 5)
-    pygame.draw.ellipse(screen, BLUE, [100 + offset, 100 + offset, 20, 25], 5)
-    pygame.draw.line(screen, GREEN, [0,0], [100 + offset, 100 + offset], 5)
+    pygame.draw.rect(screen, red, [100 + offset, 100 + offset, 20, 25], 5)
+    pygame.draw.ellipse(screen, blue, [100 + offset, 100 + offset, 20, 25], 5)
+    pygame.draw.line(screen, green, [line_s,line_s], [line_e, line_e], 5)
+    pygame.draw.arc(screen, WHITE, [300, 300, 100, 100], 0, PI, 5)
     # --- Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
  
