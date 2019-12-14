@@ -53,6 +53,7 @@ while not done:
         green = WHITE
         line_s = 0
         line_e = 200
+        wall = RED
 
     elif offset > 220:    
         red = RED
@@ -60,11 +61,14 @@ while not done:
         green = GREEN
         line_s = 320
         line_e = 100 + offset
+        wall = BLACK
+
 
     else:
         red = RED
         blue = BLUE
         green = GREEN
+        wall = BLUE
         line_s = 0
         line_e = 100 + offset
 
@@ -85,6 +89,8 @@ while not done:
     pygame.draw.ellipse(screen, blue, [100 + offset, 100 + offset, 20, 25], 5)
     pygame.draw.line(screen, green, [line_s,line_s], [line_e, line_e], 5)
     pygame.draw.arc(screen, WHITE, [300, 300, 100, 100], 0, PI, 5)
+    pygame.draw.line(screen, wall, [250, 200], [250, 350], 20)
+    pygame.draw.line(screen, wall, [250, 200], [400, 200], 20)
     # --- Go ahead and update the screen with what we've drawn.
     pygame.display.flip()
  
