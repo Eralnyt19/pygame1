@@ -1,4 +1,8 @@
 # Time to learn Pygame
+
+
+ ![My picture](./alien1.gif)
+
 Starting to play around
 <<<<<<< HEAD
  a bit
