@@ -1,7 +1,7 @@
 # Time to learn Pygame
 
 
- ![My picture](./alien1.gif)
+ ![My picture](./arduino.tif)
 
 Starting to play around
 <<<<<<< HEAD
